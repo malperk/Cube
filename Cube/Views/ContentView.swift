@@ -49,6 +49,9 @@ struct ARViewContainer: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: ARView, context: Context) {
+        //Performance
+//        context.coordinator.cubeEntity?.position.y = Float(cubeYPosition)
+        //Smooth
         context.coordinator.cubeEntity?.move(
             to: Transform(translation: [0, Float(cubeYPosition), -1]),
             relativeTo: nil,
